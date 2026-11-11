@@ -137,7 +137,7 @@ npx skills add . --list
 npx skills add . --skill mongo-readonly
 ```
 
-Once this repository is public, the equivalent remote command is:
+Install from the public repository on another machine:
 
 ```bash
 npx skills add tboon0/mongo-readonly-mcp --skill mongo-readonly
