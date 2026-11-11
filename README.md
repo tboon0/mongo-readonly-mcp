@@ -4,9 +4,24 @@
 
 Query databases on different hosts and ports without registering a separate MCP server for each one. Each operation selects a `profile`; an agent can read several profiles in the same session and combine their results. Connections are cached independently. Cross-server joins and transactionally consistent cross-profile reads are not provided.
 
-## Install from source
+## Install
 
-Requires Node.js 22.12 or later. npm publication is pending; the examples use a local build, not an assumed registry release.
+Requires Node.js 22.12 or later. Install the published server and CLI:
+
+```bash
+npm install -g mongo-readonly-mcp@0.1.0
+mongo-readonly-mcp --help
+```
+
+Or run the MCP server without a global installation:
+
+```bash
+npx --yes mongo-readonly-mcp@0.1.0 serve
+```
+
+The source-build examples below use `node dist/index.js`; substitute `mongo-readonly-mcp` when using the installed package.
+
+### Build from source
 
 ```bash
 npm ci
@@ -50,7 +65,9 @@ TLS defaults to enabled for remote hosts and disabled for localhost/loopback. Se
 node dist/index.js serve
 ```
 
-Register the local build with your MCP client, using absolute paths:
+For the npm package, register `npx` as the command with arguments `["--yes", "mongo-readonly-mcp@0.1.0", "serve"]` and set `MONGO_READONLY_PROFILES` to your absolute configuration path.
+
+Alternatively, register the local build with your MCP client, using absolute paths:
 
 ```json
 {

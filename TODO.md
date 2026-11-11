@@ -1,9 +1,9 @@
 # TODO
 
 - [ ] Verify deployed read-only credentials on every configured MongoDB instance. Exercise profile listing, collection listing, and bounded reads through CLI and MCP; do not test writes against production.
-- [ ] Complete release checks and verify the npm package contents before publication. Registry installation instructions remain pending publication.
-- [ ] After the public repository is available, verify remote skill discovery with `npx skills add tboon0/mongo-readonly-mcp --list`. Local compatibility does not confirm a skills.sh listing.
-- [ ] Enable a private vulnerability-reporting channel before inviting sensitive reports.
+- [x] Publish version 0.1.0 and verify its registry integrity, installed CLI, and MCP tool discovery.
+- [x] Verify remote skill installation from the public repository. Installation does not confirm a skills.sh website listing.
+- [x] Enable GitHub private vulnerability reporting.
 
 ## Out of scope
 
