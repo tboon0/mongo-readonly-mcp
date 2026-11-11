@@ -1,0 +1,13 @@
+node_modules/
+dist/
+*.log
+
+# Local secrets — never commit real credentials
+profiles.yaml
+
+# Local configuration and legacy runtime artifacts
+.mongo-readonly/
+.mongo-guard/
+jsonout/
+
+.DS_Store
