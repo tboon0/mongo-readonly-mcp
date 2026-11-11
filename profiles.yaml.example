@@ -1,0 +1,29 @@
+# Copy to profiles.yaml (gitignored) or ~/.mongo-readonly/profiles.yaml.
+# Replace placeholders locally; never commit credentials.
+# Grant only MongoDB's read role on the required databases.
+# Every client can access every profile in this file.
+
+defaults:
+  host: localhost
+
+profiles:
+  inventory:
+    port: 27017
+    db: inventory
+    username: readonly_user
+    password: replace_me
+    authSource: inventory
+
+  analytics:
+    host: mongo.example.com
+    port: 27017
+    db: analytics
+    username: readonly_user
+    password: replace_me
+    authSource: analytics
+    tls: true
+    # For a private CA, set tlsCAFile to an absolute certificate path.
+    # Certificate and hostname verification cannot be disabled.
+
+# TLS defaults on for remote hosts, off for localhost/loopback.
+# Explicit tls: false is unsafe outside trusted encrypted tunnels.
